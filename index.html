@@ -3,62 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7rb Store</title>
+    <title>7rb Store | كل منتجاتك الرقمية في مكان واحد</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #0b0b12;
-            color: #ffffff;
-            font-family: Tahoma, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
+        :root {
+            --bg-dark: #0a0a10;
+            --card-bg: #12121e;
+            --purple-main: #6366f1;
+            --purple-accent: #8b5cf6;
+            --purple-glow: rgba(139, 92, 246, 0.4);
+            --text-white: #ffffff;
+            --text-gray: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
         }
-        h1 {
-            color: #a855f7;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
         }
-        p {
-            color: #9ca3af;
-            font-size: 1.1rem;
+
+        /* شريط الإعلانات العلوى المتحرك */
+        .ticker-bar {
+            background: linear-gradient(90deg, #4f46e5, #7c3aed);
+            color: #fff;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            font-weight: 700;
+            overflow: hidden;
+            white-space: nowrap;
         }
-        .card {
-            background: #161623;
-            border: 2px solid #8a2be2;
-            border-radius: 15px;
-            padding: 30px;
-            max-width: 350px;
-            margin: 40px auto;
-            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
-        }
-        .price {
-            color: #a855f7;
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-        .btn {
-            background: #8a2be2;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
+
+        .ticker-content {
             display: inline-block;
-            font-weight: bold;
+            animation: ticker 25s linear infinite;
         }
-    </style>
-</head>
-<body>
 
-    <h1>7rb Store ⚡</h1>
-    <p>متجر سبع للخدمات البرمجية وبوتات الديسكورد</p>
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
-    <div class="card">
-        <h2>🤖 بوت ديسكورد متكامل</h2>
-        <p>إدارة، تكتات، وتخصيص كامل للسيرفر.</p>
-        <div class="price">50 SAR</div>
-        <a href="#" class="btn">طلب المنتج</a>
-    </div>
+        /* الهيدر */
+        header {
+            background-color: rgba(10, 10, 16, 0.95);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
 
-</body>
-</html>
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .brand span {
+            color: var(--purple-accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #fff;
+            background: rgba(139, 92, 246, 0.15);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-login {
+            background: var(--purple-accent);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 15px var(--purple-glow);
+        }
+
+        /* البانر الرئيسي */
+        .hero-banner {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            border-radius: 28px;
+            padding: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.25);
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 25px;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-main {
+            background: #fff;
+            color: #4f46e5;
+            padding: 12px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .btn-outline {
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        /* قسم الأقسام والفلترة */
+        .container {
+            width: 
