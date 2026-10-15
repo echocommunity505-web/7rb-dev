@@ -3,234 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7rb Store | متجر سبع</title>
+    <title>7rb Store | متجر الخدمات الرقمية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-dark: #0a0813;
+            --card-bg: #120f24;
+            --accent-purple: #a855f7;
+            --accent-glow: #8b5cf6;
+            --text-main: #ffffff;
+            --text-muted: #9ca3af;
+            --border-glow: rgba(168, 85, 247, 0.4);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Cairo', sans-serif;
         }
 
         body {
-            background-color: #0d0d15;
-            color: #ffffff;
-            text-align: center;
-            padding-bottom: 50px;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
         }
 
-        /* الشريط العلوي */
-        .top-bar {
-            background: linear-gradient(90deg, #6366f1, #a855f7);
-            color: white;
-            padding: 10px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-
-        /* الهيدر */
+        /* الهيدر العلوي */
         header {
-            background: #141422;
-            padding: 20px;
+            background: rgba(10, 8, 19, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 15px 6%;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #232338;
-            max-width: 1200px;
-            margin: 0 auto;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #a855f7;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            text-shadow: 0 0 12px var(--accent-purple);
+            text-decoration: none;
         }
 
         .logo span {
-            color: #ffffff;
+            color: var(--accent-purple);
         }
 
-        /* البانر */
-        .hero {
-            background: linear-gradient(135deg, #2a1b4e, #141422);
-            margin: 20px auto;
-            max-width: 1100px;
-            padding: 40px 20px;
-            border-radius: 20px;
-            border: 1px solid #8a2be2;
-        }
-
-        .hero h1 {
-            font-size: 32px;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .hero p {
-            color: #a1a1aa;
-            font-size: 16px;
-        }
-
-        /* شبكة المنتجات */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            text-align: right;
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #a855f7;
-            border-right: 4px solid #a855f7;
-            padding-right: 10px;
-        }
-
-        .products-grid {
+        .nav-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
+            gap: 15px;
+            list-style: none;
         }
 
-        .card {
-            background: #181828;
-            border: 1px solid #2d2d48;
-            border-radius: 15px;
-            width: 300px;
-            padding: 20px;
-            text-align: right;
-            position: relative;
-        }
-
-        .card:hover {
-            border-color: #a855f7;
-        }
-
-        .tag {
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            background: #8a2be2;
-            color: white;
-            font-size: 11px;
-            padding: 3px 8px;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        .card-icon {
-            font-size: 40px;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        .card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #ffffff;
-        }
-
-        .card p {
-            color: #9ca3af;
-            font-size: 13px;
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .card-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #232338;
-            padding-top: 15px;
-        }
-
-        .price {
-            font-size: 20px;
-            font-weight: bold;
-            color: #a855f7;
-        }
-
-        .btn {
-            background: #8a2be2;
-            color: white;
+        .nav-links a {
+            color: var(--text-muted);
             text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: bold;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            transition: all 0.3s;
         }
 
-        /* الفوتر */
-        footer {
-            margin-top: 50px;
-            color: #6b7280;
-            font-size: 14px;
+        .nav-links a:hover, .nav-links a.active {
+            color: #fff;
+            background: rgba(168, 85, 247, 0.15);
+            border: 1px solid var(--border-glow);
         }
-    </style>
-</head>
-<body>
 
-    <div class="top-bar">
-        ⚡ متجر 7rb Store - تسليم رقمي سريع وبوتات احترافية ⚡
-    </div>
-
-    <header>
-        <div class="logo">7rb <span>Store</span></div>
-        <a href="https://discord.gg" class="btn">الديسكورد</a>
-    </header>
-
-    <div class="hero">
-        <h1>كل خدماتك البرمجية في مكان واحد</h1>
-        <p>اختر خدمات الديسكورد، السكريبتات، والأدوات الخاصة بك وطلبها بكل سهولة.</p>
-    </div>
-
-    <div class="container">
-        <div class="section-title">المنتجات المتاحة</div>
-
-        <div class="products-grid">
-            
-            <div class="card">
-                <span class="tag">مميز</span>
-                <div class="card-icon">🤖</div>
-                <h3>بوت ديسكورد متكامل</h3>
-                <p>إدارة روم، تكتات، حماية، وترحيب مخصص للسيرفر مع لوحة تحكم.</p>
-                <div class="card-footer">
-                    <div class="price">50 ر.س</div>
-                    <a href="#" class="btn">طلب</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="tag">حصري</span>
-                <div class="card-icon">💻</div>
-                <h3>حزمة سكريبتات Terminal</h3>
-                <p>أدوات فحص وتوليد يوزرات وتصاميم ASCII مخصصة لـ iSH.</p>
-                <div class="card-footer">
-                    <div class="price">30 ر.س</div>
-                    <a href="#" class="btn">طلب</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <span class="tag">حسب الطلب</span>
-                <div class="card-icon">🛠️</div>
-                <h3>برمجة خاصة مخصصة</h3>
-                <p>تطوير أداة أو سكريبت كامل حسب الفكرة والطلب الخاص بك.</p>
-                <div class="card-footer">
-                    <div class="price">تواصل معنا</div>
-                    <a href="#" class="btn">طلب</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <footer>
-        © 2026 7rb Store | جميع الحقوق محفوظة
-    </footer>
-
-</body>
-</html>
+        .search-box {
+            background: #181430;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 6px 16px;
+            display:
