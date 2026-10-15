@@ -101,4 +101,136 @@
             width: 300px;
             padding: 20px;
             text-align: right;
-            position
+            position: relative;
+        }
+
+        .card:hover {
+            border-color: #a855f7;
+        }
+
+        .tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #8a2be2;
+            color: white;
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .card-icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .card p {
+            color: #9ca3af;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #232338;
+            padding-top: 15px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #a855f7;
+        }
+
+        .btn {
+            background: #8a2be2;
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* الفوتر */
+        footer {
+            margin-top: 50px;
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        ⚡ متجر 7rb Store - تسليم رقمي سريع وبوتات احترافية ⚡
+    </div>
+
+    <header>
+        <div class="logo">7rb <span>Store</span></div>
+        <a href="https://discord.gg" class="btn">الديسكورد</a>
+    </header>
+
+    <div class="hero">
+        <h1>كل خدماتك البرمجية في مكان واحد</h1>
+        <p>اختر خدمات الديسكورد، السكريبتات، والأدوات الخاصة بك وطلبها بكل سهولة.</p>
+    </div>
+
+    <div class="container">
+        <div class="section-title">المنتجات المتاحة</div>
+
+        <div class="products-grid">
+            
+            <div class="card">
+                <span class="tag">مميز</span>
+                <div class="card-icon">🤖</div>
+                <h3>بوت ديسكورد متكامل</h3>
+                <p>إدارة روم، تكتات، حماية، وترحيب مخصص للسيرفر مع لوحة تحكم.</p>
+                <div class="card-footer">
+                    <div class="price">50 ر.س</div>
+                    <a href="#" class="btn">طلب</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="tag">حصري</span>
+                <div class="card-icon">💻</div>
+                <h3>حزمة سكريبتات Terminal</h3>
+                <p>أدوات فحص وتوليد يوزرات وتصاميم ASCII مخصصة لـ iSH.</p>
+                <div class="card-footer">
+                    <div class="price">30 ر.س</div>
+                    <a href="#" class="btn">طلب</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <span class="tag">حسب الطلب</span>
+                <div class="card-icon">🛠️</div>
+                <h3>برمجة خاصة مخصصة</h3>
+                <p>تطوير أداة أو سكريبت كامل حسب الفكرة والطلب الخاص بك.</p>
+                <div class="card-footer">
+                    <div class="price">تواصل معنا</div>
+                    <a href="#" class="btn">طلب</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 7rb Store | جميع الحقوق محفوظة
+    </footer>
+
+</body>
+</html>
