@@ -3,67 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7rb Store | متجر سبع للخدمات البرمجية</title>
+    <title>7rb Store</title>
     <style>
-        :root {
-            --bg-color: #0b0b12;
-            --card-bg: rgba(22, 22, 35, 0.7);
-            --accent-purple: #8a2be2;
-            --neon-glow: #a855f7;
-            --text-color: #ffffff;
-            --text-secondary: #9ca3af;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow-x: hidden;
-        }
-
-        header {
-            width: 100%;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(11, 11, 18, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--text-color);
-            text-shadow: 0 0 10px var(--neon-glow);
-        }
-
-        .logo span {
-            color: var(--accent-purple);
-        }
-
-        .hero {
+            background-color: #0b0b12;
+            color: #ffffff;
+            font-family: sans-serif;
             text-align: center;
-            margin: 60px 20px 40px;
-            max-width: 800px;
+            padding: 40px 20px;
         }
+        h1 {
+            color: #a855f7;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #9ca3af;
+            font-size: 1.2rem;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .card {
+            background: #161623;
+            border: 1px solid #8a2be2;
+            border-radius: 12px;
+            padding: 20px;
+            width: 280px;
+        }
+        .price {
+            color: #a855f7;
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .btn {
+            background: #8a2be2;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
 
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 15px;
-            background: linear-gradient(135deg, #fff 30%, var(--neon-glow));
-            -webkit-background-clip: text;
+    <h1>7rb Store ⚡</h1>
+    <p>متجر سبع للخدمات البرمجية وبوتات الديسكورد</p>
+
+    <div class="grid">
+        <div class="card">
+            <h3>🤖 بوت ديسكورد متكامل</h3>
+            <p>إدارة، تكتات، وتخصيص كامل.</p>
+            <div class="price">50 SAR</div>
+            <a href="#" class="btn">طلب الان</a>
+        </div>
+
+        <div class="card">
+            <h3>⚡ سكريبتات iSH & Terminal</h3>
+            <p>أدوات فحص وتوليد وبانرات ASCII.</p>
+            <div class="price">30 SAR</div>
+            <a href="#" class="btn">طلب الان</a>
+        </div>
+    </div>
+
+</body>
+</html>
